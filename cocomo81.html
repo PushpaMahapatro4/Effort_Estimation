@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCOMO 81 Effort Calculation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px #ccc;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>COCOMO 81 Effort Calculation</h1>
+        <label for="kloc">Enter KLOC:</label>
+        <input type="number" id="kloc" placeholder="KLOC" />
+        <button onclick="calculateEffort()">Calculate Effort</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculateEffort() {
+            var kloc = parseFloat(document.getElementById("kloc").value);
+            if (isNaN(kloc) || kloc <= 0) {
+                alert("Please enter a valid KLOC.");
+                return;
+            }
+
+            var effort = 2.4 * Math.pow(kloc, 1.05); // Simplified COCOMO 81 equation
+            document.getElementById("result").innerText = "Estimated Effort: " + effort.toFixed(2) + " person-months";
+        }
+    </script>
+</body>
+</html>

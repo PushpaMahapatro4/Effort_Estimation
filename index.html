@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCOMO Model Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px #ccc;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a COCOMO Model</h1>
+        <select id="modelSelect">
+            <option value="cocomo81.html">COCOMO 81 Model</option>
+            <option value="cocomo2.html">COCOMO II Model</option>
+        </select>
+        <button onclick="navigate()">Go</button>
+    </div>
+    <script>
+        function navigate() {
+            var select = document.getElementById("modelSelect");
+            var selectedValue = select.options[select.selectedIndex].value;
+            window.location.href = selectedValue;
+        }
+    </script>
+</body>
+</html>
